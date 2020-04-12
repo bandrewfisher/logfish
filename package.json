@@ -2,7 +2,7 @@
   "name": "logfish",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "yarn jestClear && jest --detectOpenHandles --colors",
     "lint": "eslint src/** tests/** --fix --cache",

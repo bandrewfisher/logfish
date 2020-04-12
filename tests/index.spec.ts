@@ -25,7 +25,8 @@ const MOCK_URL = 'url';
 
 const logMatch = (level: LogConfigLevel, message: any = MESSAGE) => {
   const lastPostCall = mockPost.mock.calls[mockPost.mock.calls.length - 1];
-  return lastPostCall[0] === POST_ENDPOINT && lastPostCall[1] === `${level}: ${message}`;
+  return lastPostCall[0] === POST_ENDPOINT
+    && JSON.stringify(lastPostCall[1]) === JSON.stringify({ data: `${level}: ${message}` });
 };
 
 const createLogfish = (): Logfish => new Logfish(MOCK_KEY, MOCK_URL);
