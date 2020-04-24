@@ -15,23 +15,23 @@ export default class Logfish {
     this.axiosInstance.defaults.headers['logfish-key'] = apiKey;
   }
 
-  public log(logData: any, { level }: LogConfig = { level: 'INFO' }) {
-    this.axiosInstance.post('/log', { data: `${level}: ${logData}` });
+  public async log(logData: any, { level }: LogConfig = { level: 'INFO' }) {
+    await this.axiosInstance.post('/log', { data: `${level}: ${logData}` });
   }
 
-  public info(logData: any) {
-    this.log(logData, { level: 'INFO' });
+  public async info(logData: any) {
+    await this.log(logData, { level: 'INFO' });
   }
 
-  public warn(logData: any) {
-    this.log(logData, { level: 'WARN' });
+  public async warn(logData: any) {
+    await this.log(logData, { level: 'WARN' });
   }
 
-  public debug(logData: any) {
-    this.log(logData, { level: 'DEBUG' });
+  public async debug(logData: any) {
+    await this.log(logData, { level: 'DEBUG' });
   }
 
-  public error(logData: any) {
-    this.log(logData, { level: 'ERROR' });
+  public async error(logData: any) {
+    await this.log(logData, { level: 'ERROR' });
   }
 }
