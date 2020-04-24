@@ -38,23 +38,23 @@ You will see the output from each of these calls in the logfish.dev console.
 
 The following methods exist on a new `Logfish` object.
 
-### lf.log(logData: any, { level }: LogConfig = { level: 'INFO' }): Promise<void>
+### lf.log(logData: any, { level }: LogConfig = { level: 'INFO' }): Promise\<void\>
 
 Logs `logData` to the logfish.dev console. `logData` must be a string or a JSON serializable object.
 `level` is one of 'INFO', 'WARN', 'DEBUG', or 'ERROR'.
 
-### lf.info(logData: any): Promise<void>
+### lf.info(logData: any): Promise\<void\>
 
 Equivalent to `lf.log(logData, { level: 'INFO' })`
 
-### lf.warn(logData: any): Promise<void>
+### lf.warn(logData: any): Promise\<void\>
 
 Equivalent to `lf.log(logData, { level: 'WARN' })`
 
-### lf.debug(logData: any): Promise<void>
+### lf.debug(logData: any): Promise\<void\>
 
 Equivalent to `lf.log(logData, { level: 'DEBUG' })`
 
-### lf.error(logData: any): Promise<void>
+### lf.error(logData: any): Promise\<void\>
 
 Equivalent to `lf.log(logData, { level: 'ERROR' })`
