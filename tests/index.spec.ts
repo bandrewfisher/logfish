@@ -21,7 +21,6 @@ jest.mock('axios', () => ({
 const POST_ENDPOINT = '/log';
 const MESSAGE = 'message';
 const MOCK_KEY = 'key';
-const MOCK_URL = 'url';
 
 const logMatch = (level: LogConfigLevel, message: any = MESSAGE) => {
   const lastPostCall = mockPost.mock.calls[mockPost.mock.calls.length - 1];
@@ -29,11 +28,11 @@ const logMatch = (level: LogConfigLevel, message: any = MESSAGE) => {
     && JSON.stringify(lastPostCall[1]) === JSON.stringify({ data: `${level}: ${message}` });
 };
 
-const createLogfish = (): Logfish => new Logfish(MOCK_KEY, MOCK_URL);
+const createLogfish = (): Logfish => new Logfish(MOCK_KEY);
 
 test('creates axios object', () => {
   createLogfish();
-  expect(axios.create).toHaveBeenCalledWith({ baseURL: MOCK_URL });
+  expect(axios.create).toHaveBeenCalledWith({ baseURL: 'http://logfish.us-west-2.elasticbeanstalk.com/' });
   expect(mockAxiosDefaults.headers['logfish-key']).toBe(MOCK_KEY);
 });
 
