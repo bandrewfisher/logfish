@@ -20,16 +20,16 @@ $ yarn add logfish
 
 First go to logfish.dev to retrieve a temporary API key. Then use that key to create a Logfish object.
 
-```
+```js
 const Logfish = require("logfish").default;
 // or
 import Logfish from "logfish";
 
 const lf = new Logfish("API_KEY_HERE");
-lf.info('some handy info');
-lf.warn('something could go wrong here!');
-lf.debug('some variable value');
-lf.error('something went wrong');
+lf.info("some handy info");
+lf.warn("something could go wrong here!");
+lf.debug("some variable value");
+lf.error("something went wrong");
 ```
 
 You will see the output from each of these calls in the logfish.dev console.
