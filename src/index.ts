@@ -8,9 +8,9 @@ export interface LogConfig {
 export default class Logfish {
   private axiosInstance: import('axios').AxiosInstance;
 
-  constructor(apiKey: string) {
+  constructor(apiKey: string, url: string = 'http://logfish.us-west-2.elasticbeanstalk.com/') {
     this.axiosInstance = axios.create({
-      baseURL: 'http://logfish.us-west-2.elasticbeanstalk.com/',
+      baseURL: url,
     });
     this.axiosInstance.defaults.headers['logfish-key'] = apiKey;
   }
