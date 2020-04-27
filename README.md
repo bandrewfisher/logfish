@@ -21,6 +21,7 @@ $ yarn add logfish
 First, you will need to locally set up a Logfish client and server. You will need to clone each of the following repositories and follow the instructions in the README files.
 
 Server: [https://github.com/bandrewfisher/logfish_server](https://github.com/bandrewfisher/logfish_server)
+
 Client: [https://github.com/bandrewfisher/logfish_client](https://github.com/bandrewfisher/logfish_client)
 
 ```js
